@@ -1,0 +1,30 @@
+* {
+  text-decoration: none;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.staffLoginBtn {
+  display: flex;
+  justify-content: right;
+}
+
+.title {
+  text-align: center;
+}
+
+.inputBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputBox input {
+  margin: 10px 0;
+}
+
+.btn {
+  display: block;
+  margin: 10px auto;
+}
