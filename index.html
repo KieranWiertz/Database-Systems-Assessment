@@ -13,6 +13,44 @@
       <a href="staffLogin.html"><button>Staff Login</button></a>
     </div>
 
-    <div class="bookRoom"></div>
+    <div class="bookRoom">
+      <h2 class="title">Book a room for the night!</h2>
+      <div class="inputBox">
+        <input
+          type="text"
+          name="customerFirstName"
+          placeholder="First Name"
+          required
+        />
+      </div>
+      <div class="inputBox">
+        <input
+          type="text"
+          name="customerLastName"
+          placeholder="Last Name"
+          required
+        />
+      </div>
+      <div class="inputBox">
+        <input type="text" name="customerEmail" placeholder="Email" required />
+      </div>
+      <div class="inputBox">
+        <input
+          type="text"
+          name="customerPhone"
+          placeholder="Phone Number"
+          required
+        />
+      </div>
+      <div class="inputBox">
+        <select class="roomID">
+          <option value="r1">Room 1</option>
+          <option value="r2">Room 2</option>
+          <option value="r3">Room 3</option>
+          <option value="r4">Room 4</option>
+        </select>
+      </div>
+      <button type="submit" name="submit" class="btn">Book Room</button>
+    </div>
   </body>
 </html>
