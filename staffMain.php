@@ -18,7 +18,11 @@
         ><button class="btn">Cleaning Scheduler</button></a
       >
       <br />
-      <a href="index.html"><button class="btn">Log Out</button></a>
+
+      <?php
+        echo "<a href='includes/logout.inc.php'>Logout</a>";
+      ?>
+      
     </div>
   </body>
 </html>
