@@ -13,6 +13,11 @@
   text-align: center;
 }
 
+.title1 {
+  text-align: center;
+  font-size: large;
+}
+
 .inputBox {
   display: flex;
   flex-direction: column;
