@@ -20,7 +20,6 @@ function loginUser($conn, $username, $pwd) {
     if ($row = mysqli_fetch_assoc($resultData)) {
         $pwdHashed = $row["PasswordHash"];
 
-        // Correct SHA-256 comparison
         if (hash("sha256", $pwd) === $pwdHashed) {
             session_start();
             $_SESSION["StaffID"] = $row["StaffID"];
