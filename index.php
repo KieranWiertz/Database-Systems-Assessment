@@ -11,14 +11,18 @@ if (isset($_SESSION["StaffID"])) {
 <head>
     <meta charset="UTF-8">
     <title>Staff Login</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <h1>Staff Login</h1>
-    <form action="includes/login.inc.php" method="post">
-        <input type="text" name="uid" placeholder="Staff ID" required>
-        <input type="password" name="pwd" placeholder="Password" required>
-        <button type="submit">Login</button>
-    </form>
+    <h1 class="title">Four Seasons Hotels</h1>
+    <h2 class="title">Staff Login</h2>
+    <div class="inputBox">
+        <form action="includes/login.inc.php" method="post">
+            <input type="text" name="uid" placeholder="Staff ID" required>
+            <input type="password" name="pwd" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
 
     <?php
     if (isset($_GET["error"])) {

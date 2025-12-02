@@ -17,7 +17,7 @@ if (!isset($_SESSION["StaffID"])) {
 </head>
 <body>
   <h1 class="title">Staff Portal</h1>
-  <h2>Welcome, Staff ID: <?php echo htmlspecialchars($_SESSION["StaffID"]); ?></h2>
+  <h2 class="title">Welcome, Staff ID: <?php echo htmlspecialchars($_SESSION["StaffID"]); ?></h2>
 
   <div class="staffButton">
     <a href="checkIn.html"><button class="btn">Check In</button></a>
