@@ -20,8 +20,13 @@ if (!isset($_SESSION["StaffID"])) {
   <h2 class="title">Welcome, Staff ID: <?php echo htmlspecialchars($_SESSION["StaffID"]); ?></h2>
 
   <div class="staffButton">
-    <a href="checkIn.html"><button class="btn">Check In</button></a>
-    <a href="checkOut.html"><button class="btn">Check Out</button></a>
+    <form action="includes/clockIn.inc.php" method="post">
+      <button type="submit" name="clockin" class="btn">Clock In</button>
+    </form>
+    <form action="includes/clockOut.inc.php" method="post">
+      <button type="submit" name="clockout" class="btn">Clock Out</button>
+    </form>
+    <a href="attendanceHistory.php"><button class="btn">Attendance History</button></a>
     <a href="staffManagement.html"><button class="btn">Staff Management</button></a>
     <a href="cleaningScheduler.html"><button class="btn">Cleaning Scheduler</button></a>
     <br /><br />
