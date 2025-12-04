@@ -6,7 +6,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $customerID = $_POST["customerID"];
     $roomID = $_POST["roomID"];
 
-    /* ✅ BLOCK if customer already has active booking */
     $checkCustomer = $conn->prepare("
         SELECT * FROM Bookings 
         WHERE CustomerID = ? AND ActualCheckOut IS NULL
@@ -17,7 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die("This customer is already checked in.");
     }
 
-    /* ✅ BLOCK if room already occupied */
     $checkRoom = $conn->prepare("
         SELECT * FROM Bookings 
         WHERE RoomID = ? AND ActualCheckOut IS NULL
@@ -28,7 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die("This room is already occupied.");
     }
 
-    /* ✅ Insert booking */
     $sql = "INSERT INTO Bookings 
         (CustomerID, RoomID, ExpectedCheckIn, ExpectedCheckOut, ActualCheckIn)
         VALUES (?, ?, CURDATE(), DATE_ADD(CURDATE(), INTERVAL 1 DAY), NOW())";

@@ -9,7 +9,6 @@ if (!isset($_SESSION["StaffID"])) {
 
 $staffID = $_SESSION["StaffID"];
 
-// Fetch name
 $sql = "
     SELECT FirstName, LastName
     FROM Person
@@ -26,7 +25,6 @@ $nameRow = mysqli_fetch_assoc($nameResult);
 
 $fullName = $nameRow["FirstName"] . " " . $nameRow["LastName"];
 
-// Fetch attendance history
 $sql = "
     SELECT AttendanceID, ClockInTime, ClockOutTime
     FROM StaffAttendance

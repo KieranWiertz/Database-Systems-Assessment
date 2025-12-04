@@ -1,7 +1,6 @@
 <?php
 require_once "includes/dbh.inc.php";
 
-/* ✅ Customers who are NOT currently checked in */
 $customers = $conn->query("
     SELECT Customers.CustomerID, Person.FirstName, Person.LastName
     FROM Customers
@@ -11,12 +10,14 @@ $customers = $conn->query("
     )
 ");
 
-/* ✅ Rooms that are NOT currently occupied */
 $rooms = $conn->query("
     SELECT RoomID, RoomNumber 
     FROM Rooms 
     WHERE RoomID NOT IN (
         SELECT RoomID FROM Bookings WHERE ActualCheckOut IS NULL
+    )
+    AND RoomID NOT IN (
+        SELECT RoomID FROM CleaningAssignments WHERE Completed = FALSE
     )
 ");
 ?>
@@ -27,6 +28,8 @@ $rooms = $conn->query("
     <title>Room Assignment</title>
 </head>
 <body>
+
+<a href="staffMain.php"><button class="btn">Back to Staff Portal</button></a>
 
 <h2>Assign Customer to Room</h2>
 

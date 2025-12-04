@@ -28,7 +28,7 @@ if (!isset($_SESSION["StaffID"])) {
     </form>
     <a href="attendanceHistory.php"><button class="btn">Attendance History</button></a>
     <a href="roomAssignment.php"><button class="btn">Room Assignment</button></a>
-    <a href="cleaningScheduler.html"><button class="btn">Cleaning Scheduler</button></a>
+    <a href="cleaningScheduler.php"><button class="btn">Cleaning Scheduler</button></a>
     <br /><br />
     <a href="includes/logout.inc.php"><button class="btn logoutBtn">Logout</button></a>
   </div>
