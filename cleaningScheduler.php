@@ -1,14 +1,12 @@
 <?php
 require_once "includes/dbh.inc.php";
 
-/* ✅ Get all cleaners */
 $staff = $conn->query("
     SELECT Staff.StaffID, Person.FirstName, Person.LastName
     FROM Staff
     JOIN Person ON Staff.PersonID = Person.PersonID
 ");
 
-/* ✅ Get rooms that are DIRTY (checked out but not being cleaned) */
 $rooms = $conn->query("
     SELECT Rooms.RoomID, Rooms.RoomNumber
     FROM Rooms
@@ -20,7 +18,6 @@ $rooms = $conn->query("
     )
 ");
 
-/* ✅ Active cleaning jobs */
 $cleaningJobs = $conn->query("
     SELECT 
         CleaningAssignments.AssignmentID,
@@ -35,7 +32,6 @@ $cleaningJobs = $conn->query("
     WHERE CleaningAssignments.Completed = FALSE
 ");
 
-/* ✅ Room status chart */
 $roomStatus = $conn->query("
     SELECT Rooms.RoomNumber,
 
@@ -76,7 +72,6 @@ $roomStatus = $conn->query("
 
 <h1>Cleaning Scheduler</h1>
 
-<!-- ✅ ASSIGN CLEANER -->
 <h2>Assign Cleaner to Room</h2>
 
 <form action="includes/assignCleaning.inc.php" method="POST">
@@ -110,7 +105,6 @@ $roomStatus = $conn->query("
 
 <hr>
 
-<!-- ✅ ACTIVE CLEANING JOBS -->
 <h2>Active Cleaning Jobs</h2>
 
 <table border="1" cellpadding="8">
@@ -138,7 +132,6 @@ $roomStatus = $conn->query("
 
 <hr>
 
-<!-- ✅ ROOM STATUS CHART -->
 <h2>Room Status Chart</h2>
 
 <table border="1" cellpadding="10">

@@ -1,7 +1,6 @@
 <?php
 require_once "includes/dbh.inc.php";
 
-/* ✅ Simulated logged-in cleaner (replace later with session) */
 $staffID = 1;
 
 $result = $conn->query("
