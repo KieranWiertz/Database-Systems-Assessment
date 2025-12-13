@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 function emptyInputLogin($username, $pwd) {
     return empty($username) || empty($pwd);
 }
@@ -8,6 +9,7 @@ function loginUser($conn, $username, $pwd) {
     $username = trim($username);
     $pwd = trim($pwd);
 
+    // Select user by StaffID
     $sql = "SELECT * FROM Staff WHERE StaffID = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
@@ -22,9 +24,16 @@ function loginUser($conn, $username, $pwd) {
         $pwdHashed = $row["PasswordHash"];
 
         if (hash("sha256", $pwd) === $pwdHashed) {
-            session_start();
+            // Start session and store user info
             $_SESSION["StaffID"] = $row["StaffID"];
-            header("location: ../staffMain.php");
+            $_SESSION["Role"] = ($row["StaffID"] == 1) ? "manager" : "staff";
+
+            // Redirect based on role
+            if ($_SESSION["Role"] === "manager") {
+                header("location: ../managerMain.php");
+            } else {
+                header("location: ../staffMain.php");
+            }
             exit();
         } else {
             header("location: ../index.php?error=wronglogin");
@@ -37,12 +46,10 @@ function loginUser($conn, $username, $pwd) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-
     $username = $_POST["uid"];
     $pwd = $_POST["pwd"];
 
     require_once 'dbh.inc.php';
-
 
     if (emptyInputLogin($username, $pwd)) {
         header("location: ../index.php?error=emptyinput");
@@ -55,5 +62,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     header("location: ../index.php");
     exit();
 }
-
-
