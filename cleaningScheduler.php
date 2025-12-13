@@ -64,10 +64,17 @@ $roomStatus = $conn->query("
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="styles.css" />
     <title>Cleaning Scheduler</title>
 </head>
 <body>
-
+    <div class="header">
+      <img
+        class="logo"
+        src="Assets/TheGrandYorkLogo.png"
+        alt="The Grand York"
+      />
+    </div>
 <a href="staffMain.php"><button class="btn">Back to Staff Portal</button></a>
 
 <h1>Cleaning Scheduler</h1>
@@ -158,6 +165,13 @@ $roomStatus = $conn->query("
 <?php endwhile; ?>
 
 </table>
+
+    <div class="footer">
+      <p>
+        &copy; 2026 The Grand York. Made by Kieran Wiertz for Database Systems
+        at York St. John University.
+      </p>
+    </div>
 
 </body>
 </html>

@@ -16,6 +16,13 @@ if (!isset($_SESSION["StaffID"])) {
   <title>Staff Portal</title>
 </head>
 <body>
+      <div class="header">
+      <img
+        class="logo"
+        src="Assets/TheGrandYorkLogo.png"
+        alt="The Grand York"
+      />
+    </div>
   <h1 class="title">Staff Portal</h1>
   <h2 class="title">Welcome, Staff ID: <?php echo htmlspecialchars($_SESSION["StaffID"]); ?></h2>
 
@@ -32,5 +39,12 @@ if (!isset($_SESSION["StaffID"])) {
     <br /><br />
     <a href="includes/logout.inc.php"><button class="btn logoutBtn">Logout</button></a>
   </div>
+
+      <div class="footer">
+      <p>
+        &copy; 2026 The Grand York. Made by Kieran Wiertz for Database Systems
+        at York St. John University.
+      </p>
+    </div>
 </body>
 </html>

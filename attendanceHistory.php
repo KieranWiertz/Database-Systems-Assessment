@@ -46,7 +46,13 @@ $result = mysqli_stmt_get_result($stmt);
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+    <div class="header">
+      <img
+        class="logo"
+        src="Assets/TheGrandYorkLogo.png"
+        alt="The Grand York"
+      />
+    </div>
 <div class="container">
     <h1>Attendance History</h1>
     <h3><?php echo htmlspecialchars($fullName); ?></h3>
@@ -79,6 +85,13 @@ $result = mysqli_stmt_get_result($stmt);
 <div class="container">
     <a href="staffMain.php"><button class="btn-back">Back to Portal</button></a>
 </div>
+
+    <div class="footer">
+      <p>
+        &copy; 2026 The Grand York. Made by Kieran Wiertz for Database Systems
+        at York St. John University.
+      </p>
+    </div>
 
 </body>
 </html>

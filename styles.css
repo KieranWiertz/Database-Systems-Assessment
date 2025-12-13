@@ -13,6 +13,17 @@
   text-align: center;
 }
 
+.header {
+  background-color: #262626;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.logo {
+  height: 100px;
+}
+
 .title1 {
   text-align: center;
   font-size: large;
@@ -66,4 +77,14 @@ th {
   border: none;
   cursor: pointer;
   border-radius: 8px;
+}
+
+.footer {
+  background-color: #262626;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+  position: static;
+  bottom: 0;
 }

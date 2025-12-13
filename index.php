@@ -14,7 +14,13 @@ if (isset($_SESSION["StaffID"])) {
     <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <h1 class="title">Four Seasons Hotels</h1>
+    <div class="header">
+      <img
+        class="logo"
+        src="Assets/TheGrandYorkLogo.png"
+        alt="The Grand York"
+      />
+    </div>
     <h2 class="title">Staff Login</h2>
     <div class="inputBox">
         <form action="includes/login.inc.php" method="post">
@@ -22,6 +28,13 @@ if (isset($_SESSION["StaffID"])) {
             <input type="password" name="pwd" placeholder="Password" required>
             <button type="submit">Login</button>
         </form>
+    </div>
+
+    <div class="footer">
+      <p>
+        &copy; 2026 The Grand York. Made by Kieran Wiertz for Database Systems
+        at York St. John University.
+      </p>
     </div>
 
     <?php

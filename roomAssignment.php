@@ -25,10 +25,17 @@ $rooms = $conn->query("
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="styles.css" />
     <title>Room Assignment</title>
 </head>
 <body>
-
+    <div class="header">
+      <img
+        class="logo"
+        src="Assets/TheGrandYorkLogo.png"
+        alt="The Grand York"
+      />
+    </div>
 <a href="staffMain.php"><button class="btn">Back to Staff Portal</button></a>
 
 <h2>Assign Customer to Room</h2>
@@ -103,6 +110,13 @@ while ($row = $result->fetch_assoc()):
 </tr>
 <?php endwhile; ?>
 </table>
+
+    <div class="footer">
+      <p>
+        &copy; 2026 The Grand York. Made by Kieran Wiertz for Database Systems
+        at York St. John University.
+      </p>
+    </div>
 
 </body>
 </html>
