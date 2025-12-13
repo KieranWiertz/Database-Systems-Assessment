@@ -29,6 +29,14 @@ if (isset($_SESSION["StaffID"])) {
             <button type="submit">Login</button>
         </form>
     </div>
+    <h2 class="title">Manager Login</h2>
+      <div class="inputBox">
+        <form action="includes/login.inc.php" method="post">
+            <input type="text" name="uid" placeholder="Staff ID" required>
+            <input type="password" name="pwd" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
 
     <div class="footer">
       <p>

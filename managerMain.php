@@ -23,7 +23,7 @@ if (!isset($_SESSION["StaffID"])) {
         alt="The Grand York"
       />
     </div>
-  <h1 class="title">Staff Portal</h1>
+  <h1 class="title">Manager Portal</h1>
   <h2 class="title">Welcome, Staff ID: <?php echo htmlspecialchars($_SESSION["StaffID"]); ?></h2>
 
   <div class="staffButton">
@@ -34,7 +34,9 @@ if (!isset($_SESSION["StaffID"])) {
       <button type="submit" name="clockout" class="btn">Clock Out</button>
     </form>
     <a href="attendanceHistory.php"><button class="btn">Attendance History</button></a>
-    <br />
+    <a href="roomAssignment.php"><button class="btn">Room Assignment</button></a>
+    <a href="cleaningScheduler.php"><button class="btn">Cleaning Scheduler</button></a>
+    <br /><br />
     <a href="includes/logout.inc.php"><button class="btn logoutBtn">Logout</button></a>
   </div>
 
