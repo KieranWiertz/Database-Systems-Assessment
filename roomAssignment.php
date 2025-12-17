@@ -36,7 +36,7 @@ $rooms = $conn->query("
         alt="The Grand York"
       />
     </div>
-<a href="staffMain.php"><button class="btn">Back to Staff Portal</button></a>
+<a href="managerMain.php"><button class="btn">Back to Manager Portal</button></a>
 
 <h2>Assign Customer to Room</h2>
 
