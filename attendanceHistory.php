@@ -83,7 +83,11 @@ $result = mysqli_stmt_get_result($stmt);
 </table>
 
 <div class="container">
-    <a href="staffMain.php"><button class="btn-back">Back to Portal</button></a>
+   <?php if ($_SESSION["Role"] === "manager") {
+        echo '<a href="managerMain.php"><button class="btn-back">Back to Manager Portal</button></a>';
+    } else {    
+        echo '<a href="staffMain.php"><button class="btn-back">Back to Staff Portal</button></a>';
+   }; ?>
 </div>
 
     <div class="footer">
