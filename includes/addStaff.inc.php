@@ -13,9 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $action = $_POST['action'] ?? '';
 
-/* =======================
-   ADD STAFF
-======================= */
 if ($action === 'add') {
 
     $firstName = trim($_POST['first_name'] ?? '');
@@ -32,7 +29,7 @@ if ($action === 'add') {
     mysqli_begin_transaction($conn);
 
     try {
-        // Insert Person
+
         $stmt = mysqli_prepare(
             $conn,
             "INSERT INTO Person (FirstName, LastName, Phone, Email)
@@ -48,7 +45,6 @@ if ($action === 'add') {
 
         $personId = mysqli_insert_id($conn);
 
-        // Insert Staff
         $hash = hash('sha256', $password);
         $stmt = mysqli_prepare(
             $conn,
@@ -72,9 +68,6 @@ if ($action === 'add') {
     }
 }
 
-/* =======================
-   REMOVE STAFF
-======================= */
 if ($action === 'remove') {
 
     $staffId = (int) ($_POST['staff_id'] ?? 0);
@@ -86,7 +79,7 @@ if ($action === 'remove') {
     mysqli_begin_transaction($conn);
 
     try {
-        // Get PersonID
+
         $stmt = mysqli_prepare(
             $conn,
             "SELECT PersonID FROM Staff WHERE StaffID = ?"
@@ -102,7 +95,6 @@ if ($action === 'remove') {
 
         $personId = $staff['PersonID'];
 
-        // Delete Staff
         $stmt = mysqli_prepare(
             $conn,
             "DELETE FROM Staff WHERE StaffID = ?"
@@ -110,7 +102,6 @@ if ($action === 'remove') {
         mysqli_stmt_bind_param($stmt, "i", $staffId);
         mysqli_stmt_execute($stmt);
 
-        // Delete Person
         $stmt = mysqli_prepare(
             $conn,
             "DELETE FROM Person WHERE PersonID = ?"

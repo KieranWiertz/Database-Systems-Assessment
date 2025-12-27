@@ -5,9 +5,6 @@ error_reporting(E_ALL);
 
 require_once __DIR__ . '/includes/dbh.inc.php';
 
-/* =====================
-   Fetch Roles
-===================== */
 $roles = [];
 $result = mysqli_query(
     $conn,
@@ -17,9 +14,6 @@ while ($row = mysqli_fetch_assoc($result)) {
     $roles[] = $row;
 }
 
-/* =====================
-   Fetch Staff for Removal
-===================== */
 $staffList = [];
 $result = mysqli_query(
     $conn,
