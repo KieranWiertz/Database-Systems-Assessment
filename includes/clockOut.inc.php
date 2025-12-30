@@ -37,5 +37,9 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
 mysqli_stmt_bind_param($stmt, "i", $attendanceID);
 mysqli_stmt_execute($stmt);
 
-header("location: ../staffMain.php?success=clockedout");
+if ($_SESSION["Role"] === "manager") {
+        header("location: ../managerMain.php");
+    } else {
+        header("location: ../staffMain.php");
+    }
 exit();
